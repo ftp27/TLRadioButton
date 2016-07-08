@@ -40,11 +40,11 @@
     _isChecked = isChecked;
     if (isChecked) {
         [self addCheckAnimationReverse:NO
-                         totalDuration:0.5f
+                         totalDuration:self.animationDuration/1000.0f
                        completionBlock:nil];
     } else {
         [self addCheckAnimationReverse:YES
-                         totalDuration:0.5f
+                         totalDuration:self.animationDuration/1000.0f
                        completionBlock:nil];
     }
 }
@@ -53,17 +53,30 @@
     self.isChecked = !self.isChecked;
 }
 
+- (void) inspectableDefaults {
+    self.animationDuration = 500.0f;
+    self.isChecked = false;
+}
+
 
 #pragma mark - Life Cycle
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-	return [super initWithFrame:frame];
+	self = [super initWithFrame:frame];
+    if (self) {
+        [self inspectableDefaults];
+    }
+    return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
-	return [super initWithCoder:coder];
+	self = [super initWithCoder:coder];
+    if (self) {
+        [self inspectableDefaults];
+    }
+    return self;
 }
 
 - (void)setupProperties{

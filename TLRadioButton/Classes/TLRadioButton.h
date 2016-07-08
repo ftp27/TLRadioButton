@@ -13,6 +13,7 @@ IB_DESIGNABLE
 
 
 @property (nonatomic) IBInspectable BOOL isChecked;
+@property (nonatomic) IBInspectable CGFloat animationDuration;
 - (void) toggleCheckBox;
 
 - (void)addCheckAnimation;
