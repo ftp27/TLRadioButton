@@ -49,7 +49,7 @@
     }
 }
 
-- (void) toggleCheckBox {
+- (void) toggleRadioButton {
     self.isChecked = !self.isChecked;
 }
 
@@ -226,7 +226,7 @@
 
 - (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     [super endTrackingWithTouch:touch withEvent:event];
-    [self toggleCheckBox];
+    [self toggleRadioButton];
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
