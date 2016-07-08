@@ -8,14 +8,21 @@ Pod::Spec.new do |s|
   s.summary          = 'Animated RadioButton for iOS.'
 
   s.description      = <<-DESC
-Animated RadioButton for iOS.
+![Sample](https://github.com/ftp27/TLRadioButton/blob/master/TLRadioButton.gif)
+
+Radio button for iOS. 
+
+##Usage
+
+ * _isChecked_ - button status. Default - false
+ * _Animation duratoin_ - button animation speed in ms. Default - 500 ms
                        DESC
 
   s.homepage         = 'http://ftp27.ru/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Aleksey Cherepanov' => 'ftp27host@gmail.com' }
-  s.source           = { :git => 'https://github.com/ftp27/TLRadioButton', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ftp27/TLRadioButton.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/ftp27host'
 
   s.ios.deployment_target = '7.0'

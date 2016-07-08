@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		943BE0191D2EA6E800A807B3 /* QCMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BE0161D2EA6E800A807B3 /* QCMethod.m */; };
 		943BE01A1D2EA6E800A807B3 /* TLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 943BE0181D2EA6E800A807B3 /* TLRadioButton.m */; };
+		943BE01C1D2FDECB00A807B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943BE01B1D2FDECB00A807B3 /* Images.xcassets */; };
 		C9CAEE1C1A67D8AF0050F2EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAEE1B1A67D8AF0050F2EE /* main.m */; };
 		C9CAEE1F1A67D8AF0050F2EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAEE1E1A67D8AF0050F2EE /* AppDelegate.m */; };
 		C9CAEE221A67D8AF0050F2EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAEE211A67D8AF0050F2EE /* ViewController.m */; };
@@ -31,6 +32,7 @@
 		943BE0161D2EA6E800A807B3 /* QCMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QCMethod.m; path = ../../TLRadioButton/Classes/QCMethod.m; sourceTree = "<group>"; };
 		943BE0171D2EA6E800A807B3 /* TLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLRadioButton.h; path = ../../TLRadioButton/Classes/TLRadioButton.h; sourceTree = "<group>"; };
 		943BE0181D2EA6E800A807B3 /* TLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLRadioButton.m; path = ../../TLRadioButton/Classes/TLRadioButton.m; sourceTree = "<group>"; };
+		943BE01B1D2FDECB00A807B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9CAEE161A67D8AF0050F2EE /* TLRadioButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLRadioButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CAEE1A1A67D8AF0050F2EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CAEE1B1A67D8AF0050F2EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				C9CAEE211A67D8AF0050F2EE /* ViewController.m */,
 				C9CAEE231A67D8AF0050F2EE /* Main.storyboard */,
 				C9CAEE281A67D8AF0050F2EE /* LaunchScreen.xib */,
+				943BE01B1D2FDECB00A807B3 /* Images.xcassets */,
 				C9CAEE191A67D8AF0050F2EE /* Supporting Files */,
 			);
 			path = TLRadioButton;
@@ -169,7 +172,7 @@
 		C9CAEE0E1A67D8AF0050F2EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Yalantis;
 				TargetAttributes = {
 					C9CAEE151A67D8AF0050F2EE = {
@@ -205,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943BE01C1D2FDECB00A807B3 /* Images.xcassets in Resources */,
 				C9CAEE251A67D8AF0050F2EE /* Main.storyboard in Resources */,
 				C9CAEE2A1A67D8AF0050F2EE /* LaunchScreen.xib in Resources */,
 			);
@@ -289,6 +293,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -348,7 +353,10 @@
 		C9CAEE3A1A67D8AF0050F2EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = TLRadioButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ftp27.TLRadioButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,7 +366,10 @@
 		C9CAEE3B1A67D8AF0050F2EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = TLRadioButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.ftp27.TLRadioButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +390,7 @@
 				);
 				INFOPLIST_FILE = TLRadioButtonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TLRadioButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLRadioButton.app/TLRadioButton";
 			};
@@ -394,6 +406,7 @@
 				);
 				INFOPLIST_FILE = TLRadioButtonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TLRadioButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLRadioButton.app/TLRadioButton";
 			};
