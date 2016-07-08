@@ -17,7 +17,7 @@ Radio button for iOS.
  * _isChecked_ - button status. Default - false
  * _Animation duratoin_ - button animation speed in ms. Default - 500 ms
                        DESC
-
+  s.homepage         = 'https://github.com/ftp27/TLRadioButton'
   s.screenshots      = 'https://github.com/ftp27/TLRadioButton/raw/master/TLRadioButton.gif'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Aleksey Cherepanov' => 'ftp27host@gmail.com' }

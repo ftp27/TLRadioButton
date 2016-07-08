@@ -10,8 +10,8 @@ Radio button for iOS.
 
 ##Usage
 
- * _isChecked_ - button status. Default - false
- * _Animation duratoin_ - button animation speed in ms. Default - 500 ms
+ * *isChecked* - button status. Default - _false_
+ * *Animation duratoin* - button animation speed in ms. Default - _500 ms_
 
 ## Example
 
