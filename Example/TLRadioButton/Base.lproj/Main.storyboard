@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kOI-My-JaY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="0d6-Tf-tGe">
+            <objects>
+                <viewController id="kOI-My-JaY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HhM-YV-3i0"/>
+                        <viewControllerLayoutGuide type="bottom" id="DiT-7g-cWW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MIX-DD-qXB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8P9-qt-DMM" customClass="TLRadioButton">
+                                <rect key="frame" x="234" y="288" width="24" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="DxF-Uc-Gdl"/>
+                                    <constraint firstAttribute="width" constant="24" id="f3w-6E-dHa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAm-PR-A7Y" customClass="TLRadioButton">
+                                <rect key="frame" x="288" y="288" width="24" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="N8h-ML-WIH"/>
+                                    <constraint firstAttribute="width" constant="24" id="a5B-7S-e3L"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F45-tF-wRt" customClass="TLRadioButton">
+                                <rect key="frame" x="342" y="288" width="24" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="czq-nk-Nyh"/>
+                                    <constraint firstAttribute="width" constant="24" id="eTD-gu-1An"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DAm-PR-A7Y" firstAttribute="centerY" secondItem="MIX-DD-qXB" secondAttribute="centerY" id="4eI-MD-OMt"/>
+                            <constraint firstItem="DAm-PR-A7Y" firstAttribute="centerY" secondItem="MIX-DD-qXB" secondAttribute="centerY" id="Syp-Xd-1HM"/>
+                            <constraint firstItem="F45-tF-wRt" firstAttribute="centerY" secondItem="MIX-DD-qXB" secondAttribute="centerY" id="iET-ca-xkP"/>
+                            <constraint firstItem="DAm-PR-A7Y" firstAttribute="leading" secondItem="8P9-qt-DMM" secondAttribute="trailing" constant="30" id="k1e-fl-ci3"/>
+                            <constraint firstItem="DAm-PR-A7Y" firstAttribute="centerX" secondItem="MIX-DD-qXB" secondAttribute="centerX" id="lzd-ge-RSh"/>
+                            <constraint firstItem="F45-tF-wRt" firstAttribute="leading" secondItem="DAm-PR-A7Y" secondAttribute="trailing" constant="30" id="ohu-v5-x8W"/>
+                            <constraint firstItem="8P9-qt-DMM" firstAttribute="centerY" secondItem="MIX-DD-qXB" secondAttribute="centerY" id="uaG-m9-rNT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFX-Ib-WTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="-69"/>
+        </scene>
+    </scenes>
+</document>
