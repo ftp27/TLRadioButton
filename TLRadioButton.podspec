@@ -15,7 +15,7 @@ Animated RadioButton for iOS.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Aleksey Cherepanov' => 'ftp27host@gmail.com' }
-  s.source           = { :git => '', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ftp27/TLRadioButton', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/ftp27host'
 
   s.ios.deployment_target = '7.0'
