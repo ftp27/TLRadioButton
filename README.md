@@ -10,10 +10,11 @@ Radio button for iOS.
 
 ##Usage
 
- * _isChecked_ - button status. Default - false
- * _Animation duratoin_ - button animation speed in ms. Default - 500 ms
- * _Selected Color_ - button color for selected state. Default - Tint color
- * _Not selected Color_ - button color for not selected state. Default - Tint color
+ * *isChecked* - button status. Default - _false_
+ * *Animation duratoin* - button animation speed in ms. Default - _500 ms_
+ * *Selected Color* - button color for selected state. Default - _Tint color_
+ * *Not selected Color* - button color for not selected state. Default - _Tint color_
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
