@@ -28,12 +28,17 @@
     
 #if TARGET_INTERFACE_BUILDER
     if (!self.isChecked) {
-        ((CAShapeLayer *) self.layers[@"oval2"]).fillColor = [UIColor clearColor].CGColor;
+        ((CAShapeLayer *) self.layers[@"oval2"]).fillColor   = [UIColor clearColor].CGColor;
+        ((CAShapeLayer *) self.layers[@"oval"]).strokeColor  = (self.notSelectedColor.CGColor != nil)?self.notSelectedColor.CGColor:self.tintColor.CGColor;
+    } else {
+        ((CAShapeLayer *) self.layers[@"oval2"]).fillColor   = (self.selectedColor.CGColor != nil)?self.selectedColor.CGColor:self.tintColor.CGColor;
+        ((CAShapeLayer *) self.layers[@"oval"]).strokeColor  = (self.selectedColor.CGColor != nil)?self.selectedColor.CGColor:self.tintColor.CGColor;
     }
 #else
     self.isChecked = _isChecked;
 #endif
     
+    [self updateColors];    
 };
 
 - (void) setIsChecked:(BOOL)isChecked {
@@ -54,8 +59,14 @@
 }
 
 - (void) inspectableDefaults {
+    self.selectedColor     = self.tintColor;
+    self.notSelectedColor  = self.tintColor;
     self.animationDuration = 500.0f;
-    self.isChecked = false;
+    self.isChecked         = false;
+}
+
+- (void) updateColors {
+    
 }
 
 
@@ -117,16 +128,23 @@
 - (void)resetLayerPropertiesForLayerIdentifiers:(NSArray *)layerIds{
 	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
+    
+    UIColor *color;
+    if (self.isChecked) {
+        color = self.selectedColor;
+    } else {
+        color = self.notSelectedColor;
+    }
 	
 	if(!layerIds || [layerIds containsObject:@"oval"]){
 		CAShapeLayer * oval = self.layers[@"oval"];
 		oval.fillColor   = nil;
-		oval.strokeColor = self.tintColor.CGColor;
+		oval.strokeColor = color.CGColor;
 		oval.lineWidth   = self.strokeWidth;
 	}
 	if(!layerIds || [layerIds containsObject:@"oval2"]){
 		CAShapeLayer * oval2 = self.layers[@"oval2"];
-		oval2.fillColor = self.tintColor.CGColor;
+		oval2.fillColor = color.CGColor;
 		oval2.lineWidth = 0;
 	}
 	
@@ -155,7 +173,18 @@
 	}
 	
 	NSString * fillMode = reverseAnimation ? kCAFillModeBoth : kCAFillModeForwards;
-	
+    
+    ////Oval animation
+    CAKeyframeAnimation * ovalStrokeColorAnim = [CAKeyframeAnimation animationWithKeyPath:@"strokeColor"];
+    ovalStrokeColorAnim.values   = @[(id)self.notSelectedColor.CGColor,
+                                     (id)self.selectedColor.CGColor];
+    ovalStrokeColorAnim.keyTimes = @[@0, @1];
+    ovalStrokeColorAnim.duration = totalDuration;
+    
+    CAAnimationGroup * ovalCheckAnim = [QCMethod groupAnimations:@[ovalStrokeColorAnim] fillMode:fillMode];
+    if (reverseAnimation) ovalCheckAnim = (CAAnimationGroup *)[QCMethod reverseAnimation:ovalCheckAnim totalDuration:totalDuration];
+    [self.layers[@"oval"] addAnimation:ovalCheckAnim forKey:@"ovalCheckAnim"];
+    
 	////Oval2 animation
 	CAKeyframeAnimation * oval2TransformAnim = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
 	oval2TransformAnim.values   = @[[NSValue valueWithCATransform3D:CATransform3DMakeScale(0, 0, 1)], 
@@ -163,8 +192,14 @@
 		 [NSValue valueWithCATransform3D:CATransform3DIdentity]];
 	oval2TransformAnim.keyTimes = @[@0, @0.6, @1];
 	oval2TransformAnim.duration = totalDuration;
+    
+    CAKeyframeAnimation * oval2FillColorAnim = [CAKeyframeAnimation animationWithKeyPath:@"fillColor"];
+    oval2FillColorAnim.values   = @[(id)self.notSelectedColor.CGColor,
+                                    (id)self.selectedColor.CGColor];
+    oval2FillColorAnim.keyTimes = @[@0, @1];
+    oval2FillColorAnim.duration = totalDuration;
 	
-	CAAnimationGroup * oval2CheckAnim = [QCMethod groupAnimations:@[oval2TransformAnim] fillMode:fillMode];
+	CAAnimationGroup * oval2CheckAnim = [QCMethod groupAnimations:@[oval2TransformAnim, oval2FillColorAnim] fillMode:fillMode];
 	if (reverseAnimation) oval2CheckAnim = (CAAnimationGroup *)[QCMethod reverseAnimation:oval2CheckAnim totalDuration:totalDuration];
 	[self.layers[@"oval2"] addAnimation:oval2CheckAnim forKey:@"oval2CheckAnim"];
 }
